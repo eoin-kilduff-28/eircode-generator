@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+
+.dropdown{
+    display: inline-block ;
+}
+
+.dropdown button{
+    background-color: bisque;
+    color: black;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.dropdown a{
+    display: block;
+    color: black;
+    padding: 5px 10px 3px;
+    text-decoration: none;
+    min-width: 90px;
+}
+
+.dropdown .list{
+    display: none;
+    position: absolute;
+    background-color: azure;
+}
+
+.dropdown:hover .list{
+    display: block;
+}
