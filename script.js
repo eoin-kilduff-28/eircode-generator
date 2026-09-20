@@ -32,6 +32,36 @@ const townsDropdown = document.querySelector("#towns");
         WW: ["Wicklow Town", "Bray", "Arklow", "Greystones"]
     };
 
+    
+    //routing keys for eqach listed town
+    const routes = {
+    "Carlow Town": "R93", "Tullow": "R93", "Muine Bheag": "R21",
+    "Cavan Town": "H12", "Kingscourt": "A82", "Bailieborough": "A82",
+    "Ennis": "V95", "Shannon": "V14", "Kilrush": "V15",
+    "Cobh": "P24", "Cork City": "T12", "Carrigaline": "P43", "Mallow": "P51",
+    "Buncrana": "F93", "Letterkenny": "F92", "Ballybofey": "F93", "Stranolar": "F93",
+    "Dublin City": "D01", "Tallaght": "D24", "Swords": "K67", "Dún Laoghaire": "A96", "Blanchardstown": "D15", "Malahide": "K36",
+    "Galway City": "H91", "Tuam": "H54", "Ballinasloe": "H53", "Loughrea": "H62",
+    "Tralee": "V92", "Killarney": "V93", "Listowel": "V31",
+    "Naas": "W91", "Newbridge": "W12", "Maynooth": "W23", "Celbridge": "W23",
+    "Kilkenny City": "R95", "Ferrybank": "X91", "Thomastown": "R95",
+    "Portlaois": "R32", "Portarlington": "R32", "Mountmellick": "R32",
+    "Carrick-on-Shannon": "N41", "Manorhamilton": "F91", "Ballinamore": "N41",
+    "Newcastle West": "V42", "Kilmallock": "V35", "Limerick City": "V94",
+    "Longford Town": "N39", "Granard": "N39", "Ballymahon": "N39",
+    "Drogheda": "A92", "Ardee": "A92", "Dundalk": "A91", "Dunleer": "A92",
+    "Castlebar": "F23", "Ballina": "F26", "Westport": "F28",
+    "Trim": "C15", "Navan": "C15", "Kells": "A82",
+    "Monaghan Town": "H18", "Carrickmacross": "A81", "Castleblayney": "A75",
+    "Tullamore": "R35", "Birr": "R42", "Edenderry": "R45",
+    "Roscommon Town": "F42", "Castlerea": "F45", "Boyle": "F52",
+    "Sligo Town": "F91", "Tubbercurry": "F91", "Ballymote": "F91",
+    "Tramore": "X91", "Waterford City": "X91", "Dungarvan": "X35",
+    "Mullingar": "N91", "Athlone": "N37", "Moat": "N37", // mapped from Moate
+    "Enniscourthy": "Y21", "Gorey": "Y25", "Wexford Town": "Y35",
+    "Wicklow Town": "A67", "Bray": "A98", "Arklow": "Y14", "Greystones": "A63"
+};
+
     //obtains the id of the county when a county is chosen
     county.addEventListener("change", 
     function() {
