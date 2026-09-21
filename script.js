@@ -3,7 +3,23 @@ const townContainer = document.querySelector("#town-container");
 const townsDropdown = document.querySelector("#towns");
 const generateButton = document.querySelector("#code");
 const result = document.querySelector("#result");
-const eircodeGenerator = new Generator();
+
+
+//generator method converted from java
+class Generator {
+    generateCode(route) {
+        const catalogue = "0123456789ABCDEFGHIJKLMNPQRSTUVWXYZ"; 
+        let blank = ""; 
+        for (let i = 0; i < 4; i++) {
+            const randomIndex = Math.floor(Math.random() * catalogue.length);
+            blank = blank + catalogue.charAt(randomIndex);
+        }
+        const eircode = route + " " + blank;
+        return eircode;
+    }
+}
+
+const eircodeGenerator = new Generator(); //moved below generator to initiate generator first
 
  
 //arrays of towns relative to county IDs 
@@ -16,7 +32,7 @@ const eircodeGenerator = new Generator();
         D: ["Dublin City", "Tallaght", "Swords", "Dún Laoghaire", "Blanchardstown", "Malahide"],
         GY: ["Galway City", "Tuam", "Ballinasloe", "Loughrea"],
         KY: ["Tralee", "Killarney", "Listowel"],
-        KE: ["Naas", "Newbridge", "Maynooth", "Celbridge"],
+        KE: ["Naas", "Newbridge", "Maynooth"],
         KK: ["Kilkenny City", "Ferrybank", "Thomastown"],
         LS: ["Portlaois","Portarlington", "Mountmellick"],
         LM: ["Carrick-on-Shannon", "Manorhamilton", "Ballinamore"],
@@ -46,7 +62,7 @@ const eircodeGenerator = new Generator();
     "Dublin City": "D01", "Tallaght": "D24", "Swords": "K67", "Dún Laoghaire": "A96", "Blanchardstown": "D15", "Malahide": "K36",
     "Galway City": "H91", "Tuam": "H54", "Ballinasloe": "H53", "Loughrea": "H62",
     "Tralee": "V92", "Killarney": "V93", "Listowel": "V31",
-    "Naas": "W91", "Newbridge": "W12", "Maynooth": "W23", "Celbridge": "W23",
+    "Naas": "W91", "Newbridge": "W12", "Maynooth": "W23",
     "Kilkenny City": "R95", "Ferrybank": "X91", "Thomastown": "R95",
     "Portlaois": "R32", "Portarlington": "R32", "Mountmellick": "R32",
     "Carrick-on-Shannon": "N41", "Manorhamilton": "F91", "Ballinamore": "N41",
@@ -91,20 +107,6 @@ const eircodeGenerator = new Generator();
     }
 });
 
-//generator method converted from java
-class Generator {
-    generateCode(route) {
-        const catalogue = "0123456789ABCDEFGHIJKLMNPQRSTUVWXYZ"; 
-        let blank = ""; 
-        for (let i = 0; i < 4; i++) {
-            const randomIndex = Math.floor(Math.random() * catalogue.length);
-            blank = blank + catalogue.charAt(randomIndex);
-        }
-        const eircode = route + " " + blank;
-        return eircode;
-    }
-}
-
 //uses Generator method to make full eircode
 generateButton.addEventListener("click",
     function(){
@@ -116,7 +118,7 @@ generateButton.addEventListener("click",
             const fullCode = eircodeGenerator.generateCode(route);
             result.textContent = fullCode;
         } else{
-            result.textContent("Choose a county and town first.");
+            result.textContent="Choose a county and town first.";
         }
     }
 );
