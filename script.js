@@ -1,6 +1,9 @@
 const county = document.querySelector("#counties");
 const townContainer = document.querySelector("#town-container");
 const townsDropdown = document.querySelector("#towns");
+const generateButton = document.querySelector("#code");
+const result = document.querySelector("#result");
+const eircodeGenerator = new Generator();
 
  
 //arrays of towns relative to county IDs 
@@ -27,7 +30,7 @@ const townsDropdown = document.querySelector("#towns");
         RN: ["Roscommon Town", "Castlerea", "Boyle"],
         SO: ["Sligo Town", "Tubbercurry", "Ballymote"],
         WD: ["Tramore", "Waterford City", "Dungarvan"],
-        WH: ["Mullingar", "Athlone", "Moat"],
+        WH: ["Mullingar", "Athlone", "Moate"],
         WX: ["Enniscourthy", "Gorey", "Wexford Town"],
         WW: ["Wicklow Town", "Bray", "Arklow", "Greystones"]
     };
@@ -57,7 +60,7 @@ const townsDropdown = document.querySelector("#towns");
     "Roscommon Town": "F42", "Castlerea": "F45", "Boyle": "F52",
     "Sligo Town": "F91", "Tubbercurry": "F91", "Ballymote": "F91",
     "Tramore": "X91", "Waterford City": "X91", "Dungarvan": "X35",
-    "Mullingar": "N91", "Athlone": "N37", "Moat": "N37", // mapped from Moate
+    "Mullingar": "N91", "Athlone": "N37", "Moate": "N37",
     "Enniscourthy": "Y21", "Gorey": "Y25", "Wexford Town": "Y35",
     "Wicklow Town": "A67", "Bray": "A98", "Arklow": "Y14", "Greystones": "A63"
 };
@@ -87,6 +90,36 @@ const townsDropdown = document.querySelector("#towns");
         townContainer.style.display = "none"; 
     }
 });
+
+//generator method converted from java
+class Generator {
+    generateCode(route) {
+        const catalogue = "0123456789ABCDEFGHIJKLMNPQRSTUVWXYZ"; 
+        let blank = ""; 
+        for (let i = 0; i < 4; i++) {
+            const randomIndex = Math.floor(Math.random() * catalogue.length);
+            blank = blank + catalogue.charAt(randomIndex);
+        }
+        const eircode = route + " " + blank;
+        return eircode;
+    }
+}
+
+//uses Generator method to make full eircode
+generateButton.addEventListener("click",
+    function(){
+        const townValue = townsDropdown.value;
+        const route = routes[townValue];
+
+        if(route){
+            //this method passes the county's routing key into generator
+            const fullCode = eircodeGenerator.generateCode(route);
+            result.textContent = fullCode;
+        } else{
+            result.textContent("Choose a county and town first.");
+        }
+    }
+);
 
 
 
