@@ -28,13 +28,13 @@ const eircodeGenerator = new Generator(); //moved below generator to initiate ge
         CN: ["Cavan Town", "Kingscourt", "Bailieborough"],
         CE: ["Ennis", "Shannon", "Kilrush"],
         CK: ["Cobh", "Cork City", "Carrigaline", "Mallow"],
-        DL: ["Buncrana", "Letterkenny", "Ballybofey", "Stranolar"],
+        DL: ["Buncrana", "Letterkenny", "Ballybofey", "Stranorlar"],
         D: ["Dublin City", "Tallaght", "Swords", "Dún Laoghaire", "Blanchardstown", "Malahide"],
         GY: ["Galway City", "Tuam", "Ballinasloe", "Loughrea"],
         KY: ["Tralee", "Killarney", "Listowel"],
         KE: ["Naas", "Newbridge", "Maynooth"],
         KK: ["Kilkenny City", "Ferrybank", "Thomastown"],
-        LS: ["Portlaois","Portarlington", "Mountmellick"],
+        LS: ["Portlaoise","Portarlington", "Mountmellick"],
         LM: ["Carrick-on-Shannon", "Manorhamilton", "Ballinamore"],
         LK: ["Newcastle West", "Kilmallock", "Limerick City"],
         LD: ["Longford Town", "Granard", "Ballymahon"],
@@ -47,7 +47,7 @@ const eircodeGenerator = new Generator(); //moved below generator to initiate ge
         SO: ["Sligo Town", "Tubbercurry", "Ballymote"],
         WD: ["Tramore", "Waterford City", "Dungarvan"],
         WH: ["Mullingar", "Athlone", "Moate"],
-        WX: ["Enniscourthy", "Gorey", "Wexford Town"],
+        WX: ["Enniscorthy", "Gorey", "Wexford Town"],
         WW: ["Wicklow Town", "Bray", "Arklow", "Greystones"]
     };
 
