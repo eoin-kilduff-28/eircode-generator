@@ -8,7 +8,7 @@ const result = document.querySelector("#result");
 //generator method converted from java
 class Generator {
     generateCode(route) {
-        const catalogue = "0123456789ABCDEFGHIJKLMNPQRSTUVWXYZ"; 
+        const catalogue = "0123456789ACDEFHKNPRTVWXY"; 
         let blank = ""; 
         for (let i = 0; i < 4; i++) {
             const randomIndex = Math.floor(Math.random() * catalogue.length);
@@ -24,11 +24,11 @@ const eircodeGenerator = new Generator(); //moved below generator to initiate ge
  
 //arrays of towns relative to county IDs 
     const countyTowns = {
-        CW: ["Carlow Town", "Tullow", "Muine Bheag"],
-        CN: ["Cavan Town", "Kingscourt", "Bailieborough"],
+        CW: ["Carlow Town", "Muine Bheag"],
+        CN: ["Cavan Town", "Kingscourt", "Cootehill", "Belturbet"],
         CE: ["Ennis", "Shannon", "Kilrush"],
         CK: ["Cobh", "Cork City", "Carrigaline", "Mallow"],
-        DL: ["Buncrana", "Letterkenny", "Ballybofey", "Stranorlar"],
+        DL: ["Letterkenny", "Ballybofey", "Donegal Town"],
         D: ["Dublin City", "Tallaght", "Swords", "Dún Laoghaire", "Blanchardstown", "Malahide"],
         GY: ["Galway City", "Tuam", "Ballinasloe", "Loughrea"],
         KY: ["Tralee", "Killarney", "Listowel"],
@@ -54,11 +54,11 @@ const eircodeGenerator = new Generator(); //moved below generator to initiate ge
     
     //routing keys for eqach listed town
     const routes = {
-    "Carlow Town": "R93", "Tullow": "R93", "Muine Bheag": "R21",
-    "Cavan Town": "H12", "Kingscourt": "A82", "Bailieborough": "A82",
+    "Carlow Town": "R93", "Muine Bheag": "R21",
+    "Cavan Town": "H12", "Kingscourt": "A82", "Cootehill": "H16", "Belturbet": "H14",
     "Ennis": "V95", "Shannon": "V14", "Kilrush": "V15",
     "Cobh": "P24", "Cork City": "T12", "Carrigaline": "P43", "Mallow": "P51",
-    "Buncrana": "F93", "Letterkenny": "F92", "Ballybofey": "F93", "Stranorlar": "F93",
+    "Letterkenny": "F92", "Ballybofey": "F93", "Donegal Town": "F94",
     "Dublin City": "D01", "Tallaght": "D24", "Swords": "K67", "Dún Laoghaire": "A96", "Blanchardstown": "D15", "Malahide": "K36",
     "Galway City": "H91", "Tuam": "H54", "Ballinasloe": "H53", "Loughrea": "H62",
     "Tralee": "V92", "Killarney": "V93", "Listowel": "V31",
